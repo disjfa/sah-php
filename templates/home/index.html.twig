@@ -1,0 +1,58 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="container">
+        {% for category in categories %}
+            <a href="{{ path('home_category', {'category': category.id}) }}">
+                {{ category.name }}
+            </a>
+        {% endfor %}
+    </div>
+    <div class="container">
+        <div class="embed-responsive embed-responsive-16by9">
+            <div id="player"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body_javascript %}
+    {{ parent() }}
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: 'HT4S7lTmzVU',
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      // console.log(event.target.getVideoData());
+      console.log(event.target);
+      // event.target.playVideo();
+    }
+
+    var done = false;
+
+    function onPlayerStateChange(event) {
+      // console.log(event);
+      if (event.data === YT.PlayerState.PLAYING && !done) {
+        // setTimeout(stopVideo, 6000);
+        done = true;
+      }
+    }
+
+    function stopVideo() {
+      // player.stopVideo();
+      // player.loadVideoById("bHQqvYy5KYo")
+    }
+
+    </script>
+{% endblock %}

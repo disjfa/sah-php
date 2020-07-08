@@ -1,0 +1,21 @@
+{% extends "admin.html.twig" %}
+
+{% block title %}
+    {{ 'user.form.title' | trans | desc('User') }} - {{ parent() }}
+{% endblock %}
+
+{% block content_title %}
+    {{ 'user.form.page_title' | trans | desc('User') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container py-3">
+        {{ form_start(form) }}
+        {{ form_rest(form) }}
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-save"></i>
+            {{ 'user.button.save' | trans | desc('Save') }}
+        </button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

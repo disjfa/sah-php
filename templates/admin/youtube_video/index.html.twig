@@ -1,0 +1,64 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}
+    Videos
+{% endblock %}
+
+{% block page_title %}
+    Videos
+{% endblock %}
+
+{% block body %}
+    <div class="container py-3">
+        <h1>Videos</h1>
+        <div class="pb-3">
+            <a href="{{ path('admin_youtube_video_new') }}" class="btn btn-primary">
+                <i class="fa fa-plus"></i>
+                Create new
+            </a>
+        </div>
+
+        <div class="navigation">
+            {{ knp_pagination_render(youtube_videos) }}
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>{{ knp_pagination_sortable(youtube_videos, 'youtubeVideo.table.name' | trans, 'youtubeVideo.name') }}</th>
+                    <th>Category</th>
+                    <th>{{ knp_pagination_sortable(youtube_videos, 'youtubeVideo.table.duration' | trans, 'youtubeVideo.duration') }}</th>
+                    <th>{{ knp_pagination_sortable(youtube_videos, 'youtubeVideo.table.created' | trans, 'youtubeVideo.created') }}</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for youtube_video in youtube_videos %}
+                    <tr>
+                        <td><img src="https://img.youtube.com/vi/{{ youtube_video.video }}/default.jpg" alt=""></td>
+                        <td>{{ youtube_video.name }}</td>
+                        <td>
+                            {% if youtube_video.category %}
+                                {{ youtube_video.category.name }}
+                            {% endif %}</td>
+                        <td>{{ youtube_video.duration }}</td>
+                        <td>{{ youtube_video.created ? youtube_video.created|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <a href="{{ path('admin_youtube_video_show', {'id': youtube_video.id}) }}">show</a>
+                            <a href="{{ path('admin_youtube_video_edit', {'id': youtube_video.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="navigation">
+            {{ knp_pagination_render(youtube_videos) }}
+        </div>
+    </div>
+{% endblock %}

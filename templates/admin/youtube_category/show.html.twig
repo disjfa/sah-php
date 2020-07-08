@@ -1,0 +1,45 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}
+    Category
+{% endblock %}
+
+{% block body %}
+    <div class="container py-3">
+        <div class="d-flex justify-content-between">
+            <a href="{{ path('admin_youtube_category_index') }}" class="btn btn-outline-secondary">
+                <i class="fa fa-angle-double-left"></i>
+                back to list
+            </a>
+            {{ include('admin/youtube_category/_delete_form.html.twig') }}
+        </div>
+        <br>
+        <h1>Category</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ youtube_category.name }}</td>
+            </tr>
+            <tr>
+                <th>Seqnr</th>
+                <td>{{ youtube_category.seqnr }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ youtube_category.created ? youtube_category.created|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{{ youtube_category.updated ? youtube_category.updated|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('admin_youtube_category_edit', {'id': youtube_category.id}) }}" class="btn btn-primary">
+            <i class="fa fa-pencil-alt"></i>
+            edit
+        </a>
+    </div>
+{% endblock %}

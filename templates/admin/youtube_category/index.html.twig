@@ -1,0 +1,49 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}
+    Category index
+{% endblock %}
+
+{% block body %}
+    <div class="container py-3">
+        <h1>Category index</h1>
+
+        <div class="pb-3">
+            <a href="{{ path('admin_youtube_category_new') }}" class="btn btn-primary">
+                <i class="fa fa-plus"></i>
+                Create new
+            </a>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Order</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for youtube_category in youtube_categories %}
+                    <tr>
+                        <td>{{ youtube_category.name }}</td>
+                        <td>{{ youtube_category.seqnr }}</td>
+                        <td>{{ youtube_category.created ? youtube_category.created|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ youtube_category.updated ? youtube_category.updated|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <a href="{{ path('admin_youtube_category_show', {'id': youtube_category.id}) }}">show</a>
+                            <a href="{{ path('admin_youtube_category_edit', {'id': youtube_category.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

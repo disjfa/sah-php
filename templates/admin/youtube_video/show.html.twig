@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Video{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="d-flex justify-content-between py-3">
+            <a href="{{ path('admin_youtube_video_index') }}" class="btn btn-outline-secondary">
+                <i class="fa fa-angle-double-left"></i>
+                back to list
+            </a>
+
+
+            {{ include('admin/youtube_video/_delete_form.html.twig') }}
+        </div>
+        <h1>{{ youtube_video.name }}</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>VideoId</th>
+                <td>{{ youtube_video.duration }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ youtube_video.created ? youtube_video.created|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{{ youtube_video.updated ? youtube_video.updated|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <a href="{{ path('admin_youtube_video_edit', {'id': youtube_video.id}) }}" class="btn btn-primary">
+            <i class="fa fa-pencil-alt"></i>
+            edit
+        </a>
+    </div>
+{% endblock %}

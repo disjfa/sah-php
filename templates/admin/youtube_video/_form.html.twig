@@ -1,0 +1,102 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-lg-9 col-12">
+        {{ form_row(form.name) }}
+        {{ form_row(form.video) }}
+        <div class="embed-responsive embed-responsive-16by9">
+            <div id="player"></div>
+        </div>
+        <br>
+        <button class="btn btn-primary">
+            <i class="fa fa-save"></i>
+            {{ button_label|default('Save') }}
+        </button>
+    </div>
+    <div class="col-lg-3 col-12">
+        {{ form_row(form.duration) }}
+        {{ form_row(form.category) }}
+        <button class="btn btn-primary">
+            <i class="fa fa-save"></i>
+            {{ button_label|default('Save') }}
+        </button>
+    </div>
+</div>
+{{ form_end(form) }}
+
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+var player;
+var videoId;
+var videoInput;
+var videoName;
+var videoDuration;
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  videoInput = document.getElementById('youtube_video_video');
+  videoName = document.getElementById('youtube_video_name');
+  videoDuration = document.getElementById('youtube_video_duration');
+
+  document.addEventListener('change', updateValue);
+  loadVideoId(videoInput);
+});
+
+
+function loadVideoId(trg) {
+  videoId = trg.value;
+  try {
+    const url = new URL(videoId);
+    if (url.searchParams.has('v')) {
+      videoId = url.searchParams.get('v');
+      trg.value = videoId;
+    }
+  } catch (e) {
+    // no url
+  }
+}
+
+function updateValue(e) {
+  if (e.target.id !== 'youtube_video_video') {
+    return;
+  }
+
+  if (!e.target.value) {
+    return;
+  }
+
+  loadVideoId(e.target);
+  player.cueVideoById(videoId);
+}
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: videoId,
+    playerVars: {
+      'autoplay': 0,
+    },
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  console.log(event.target.getVideoData());
+}
+
+function onPlayerStateChange(event) {
+  console.log(event.target);
+  const data = event.target.getVideoData();
+  if (data.title) {
+    videoName.value = data.title.toString();
+  }
+  const duration = event.target.getDuration();
+  if (duration) {
+    videoDuration.value = duration;
+  }
+}
+
+</script>

@@ -1,0 +1,15 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}
+    New Category
+{% endblock %}
+
+{% block body %}
+    <div class="container py-3">
+        <h1>Create new Category</h1>
+
+        {{ include('admin/youtube_category/_form.html.twig') }}
+
+        <a href="{{ path('admin_youtube_category_index') }}">back to list</a>
+    </div>
+{% endblock %}
