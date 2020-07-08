@@ -27,6 +27,7 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
     var player;
+    var playerStatus;
 
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
@@ -41,24 +42,26 @@
     }
 
     function onPlayerReady(event) {
-      // console.log(event.target.getVideoData());
+      event.target.playVideo();
       console.log(event.target);
-      // event.target.playVideo();
     }
-
-    var done = false;
 
     function onPlayerStateChange(event) {
-      // console.log(event);
-      if (event.data === YT.PlayerState.PLAYING && !done) {
-        // setTimeout(stopVideo, 6000);
-        done = true;
-      }
+      playerStatus = event.data;
+      console.log(event.data);
     }
 
-    function stopVideo() {
-      // player.stopVideo();
-      // player.loadVideoById("bHQqvYy5KYo")
+    document.addEventListener('keydown', checkKey);
+
+    function checkKey(event) {
+      if (event.code.toLowerCase() === 'space') {
+        if (playerStatus === YT.PlayerState.PLAYING) {
+          player.pauseVideo();
+        }
+        if (playerStatus === YT.PlayerState.PAUSED) {
+          player.playVideo();
+        }
+      }
     }
 
     </script>
