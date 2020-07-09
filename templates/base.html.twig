@@ -1,5 +1,13 @@
 {% extends "@GlynnTemplate/base.html.twig" %}
 
+{% block navbar_nav_class -%}
+ navbar-dark bg-dark
+{%- endblock %}
+
+{% block navbar_brand -%}
+    {{ 'site.navbar.title' | trans }}
+{%- endblock %}
+
 {% block user_menu_logged_in %}
     <li class="nav-item">
         <a href="{{ path('app_logout') }}" class="nav-link">

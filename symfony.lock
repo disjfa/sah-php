@@ -1,4 +1,7 @@
 {
+    "beberlei/doctrineextensions": {
+        "version": "v1.2.7"
+    },
     "brick/math": {
         "version": "0.8.15"
     },
@@ -133,6 +136,9 @@
     },
     "knplabs/knp-paginator-bundle": {
         "version": "v2.8.0"
+    },
+    "league/fractal": {
+        "version": "0.19.2"
     },
     "liip/imagine-bundle": {
         "version": "1.8",

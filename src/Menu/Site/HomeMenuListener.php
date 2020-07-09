@@ -25,10 +25,10 @@ class HomeMenuListener implements EventSubscriberInterface
     {
         $menu = $event->getMenu();
 
-        $menu->addChild('home', [
-            'route' => 'home_index',
-            'label' => $this->translator->trans('site.menu.home'),
-        ])->setExtra('icon', 'fa-home');
+//        $menu->addChild('home', [
+//            'route' => 'home_index',
+//            'label' => $this->translator->trans('site.menu.home'),
+//        ])->setExtra('icon', 'fa-home');
     }
 
     /**

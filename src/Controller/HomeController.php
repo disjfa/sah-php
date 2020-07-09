@@ -38,11 +38,10 @@ class HomeController extends AbstractController
     /**
      * @Route("/video/{video}", name="home_video")
      */
-    public function video(YoutubeVideo $video, YoutubeCategoryRepository $categoryRepository)
+    public function video(YoutubeVideo $video)
     {
         return $this->render('home/video.html.twig', [
             'video' => $video,
-            'categories' => $categoryRepository->findAll(),
         ]);
     }
 }

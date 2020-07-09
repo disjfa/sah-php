@@ -27,6 +27,25 @@ class YoutubeVideoRepository extends ServiceEntityRepository
         $this->paginator = $paginator;
     }
 
+    public function getRandom(YoutubeCategory $youtubeCategory = null)
+    {
+        $qb = $this->createQueryBuilder('youtubeVideo');
+        if (null !== $youtubeCategory) {
+            $qb->where('youtubeVideo.category = :category');
+            $qb->setParameter('category', $youtubeCategory);
+        }
+
+        $qq = clone $qb;
+
+        $qb->select('count(youtubeVideo.id)');
+        $count = $qb->getQuery()->getSingleScalarResult();
+
+        $qq->setMaxResults(1);
+        $qq->setFirstResult(mt_rand(0, $count - 1));
+
+        return $qq->getQuery()->getOneOrNullResult();
+    }
+
     public function findPaginated(int $page = 1, string $search = null, YoutubeCategory $youtubeCategory = null)
     {
         $qb = $this->createQueryBuilder('youtubeVideo');
