@@ -3,6 +3,7 @@
 $finder = PhpCsFixer\Finder::create()
     ->exclude('vendor')
     ->exclude('var')
+    ->in('vendor/disjfa')
     ->in(__DIR__);
 
 return PhpCsFixer\Config::create()

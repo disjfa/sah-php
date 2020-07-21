@@ -1,6 +1,18 @@
 {% extends "base.html.twig" %}
 
+{% block meta_og %}
+    <meta property="og:title" content="{{ 'site.navbar.title' | trans }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ absolute_url(path('home_index')) }}">
+    <meta property="og:image" content="{{ absolute_url(asset('img/logo.jpg')) }}">
+{% endblock %}
+
 {% block content %}
+    <div class="container py-3">
+        <div class="text-center">
+            <img src="{{ asset('img/logo.jpg') }}" alt="">
+        </div>
+    </div>
     <div class="container py-3">
         <div class="text-center">
             <h4>Kies een categorie</h4>

@@ -108,17 +108,11 @@ class YoutubeVideo
         $this->duration = $duration;
     }
 
-    /**
-     * @return YoutubeCategory|null
-     */
     public function getCategory(): ?YoutubeCategory
     {
         return $this->category;
     }
 
-    /**
-     * @param YoutubeCategory|null $category
-     */
     public function setCategory(?YoutubeCategory $category): void
     {
         $this->category = $category;

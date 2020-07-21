@@ -82,17 +82,11 @@ class YoutubeCategory
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getSeqnr(): int
     {
         return $this->seqnr;
     }
 
-    /**
-     * @param int $seqnr
-     */
     public function setSeqnr(int $seqnr): void
     {
         $this->seqnr = $seqnr;

@@ -30,11 +30,10 @@ class CategoryMenuListener implements EventSubscriberInterface
             $menu->addChild($category->getName(), [
                 'route' => 'home_category',
                 'routeParameters' => [
-                    'category'=> $category->getId(),
+                    'category' => $category->getId(),
                 ],
             ]);
         }
-
     }
 
     /**

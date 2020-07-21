@@ -1,5 +1,12 @@
 {% extends "base.html.twig" %}
 
+{% block meta_og %}
+    <meta property="og:title" content="{{ category.name }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ absolute_url(path('home_category', {'category': category.id})) }}">
+    <meta property="og:image" content="{{ absolute_url(asset('img/logo.jpg')) }}">
+{% endblock %}
+
 {% block content %}
     <div class="container py-3">
         <h1>{{ category.name }}</h1>
