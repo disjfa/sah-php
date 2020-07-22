@@ -58,7 +58,6 @@ class VideoController extends AbstractController
         return new JsonResponse($manager->createData($item)->toArray());
     }
 
-
     /**
      * @Route("/star/{video}", name="api_video_star_video")
      */
