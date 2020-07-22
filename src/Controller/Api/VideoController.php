@@ -2,7 +2,10 @@
 
 namespace App\Controller\Api;
 
+use App\Entity\Star;
 use App\Entity\YoutubeCategory;
+use App\Entity\YoutubeVideo;
+use App\Repository\StarRepository;
 use App\Repository\YoutubeVideoRepository;
 use App\Transformer\YoutubeVideoTransformer;
 use League\Fractal\Manager;
@@ -53,5 +56,31 @@ class VideoController extends AbstractController
         $manager = new Manager();
 
         return new JsonResponse($manager->createData($item)->toArray());
+    }
+
+
+    /**
+     * @Route("/star/{video}", name="api_video_star_video")
+     */
+    public function starVideo(YoutubeVideo $video, StarRepository $starRepository)
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $star = $starRepository->findOneByItemAndUser($video, $user);
+
+        if (null === $starRepository->findOneByItemAndUser($video, $user)) {
+            $star = new Star($video, $user);
+            $em->persist($star);
+            $em->flush();
+            $message = 'starred';
+        } else {
+            $em->remove($star);
+            $em->flush();
+            $message = 'deleted';
+        }
+
+        return new JsonResponse(['message' => $message]);
     }
 }

@@ -1,7 +1,11 @@
 {% extends "@GlynnTemplate/base.html.twig" %}
 
+{% block page_title -%}
+    {{ 'site.meta.title' | trans }}
+{%- endblock %}
+
 {% block navbar_nav_class -%}
- navbar-dark bg-dark
+    navbar-dark bg-dark
 {%- endblock %}
 
 {% block navbar_brand -%}

@@ -52,6 +52,11 @@ class YoutubeVideo
      * @ORM\Column(type="datetime")
      */
     private $updated;
+    /**
+     * @var Star[]
+     * @ORM\OneToMany(targetEntity="Star", cascade={"persist"}, mappedBy="video")
+     */
+    private $stars;
 
     public function __construct()
     {

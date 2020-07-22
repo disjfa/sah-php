@@ -27,6 +27,16 @@ class User implements UserInterface, Serializable
      * @ORM\Column(type="json")
      */
     private $roles = [];
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $facebookId;
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $facebookAccessToken;
 
     /**
      * @var string
@@ -124,5 +134,25 @@ class User implements UserInterface, Serializable
     public function unserialize($serialized): void
     {
         [$this->id, $this->email, $this->password] = unserialize($serialized, ['allowed_classes' => false]);
+    }
+
+    public function getFacebookId(): ?string
+    {
+        return $this->facebookId;
+    }
+
+    public function setFacebookId(?string $facebookId): void
+    {
+        $this->facebookId = $facebookId;
+    }
+
+    public function getFacebookAccessToken(): ?string
+    {
+        return $this->facebookAccessToken;
+    }
+
+    public function setFacebookAccessToken(?string $facebookAccessToken): void
+    {
+        $this->facebookAccessToken = $facebookAccessToken;
     }
 }
