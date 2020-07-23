@@ -16,105 +16,27 @@
         <div class="row">
             <div class="col-12 col-lg-10">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <div id="player"></div>
+                    <div id="player" data-video="{{ video.video }}"></div>
                 </div>
-                <h3 id="page-title">{{ video.name }}</h3>
+                <h3 id="page-title">
+                    {{ video.name }}
+                </h3>
+
+                <a href="#" class="btn btn-outline-secondary js-share" data-title="{{ video.name }}">
+                    <i class="fa fa-fw fa-share-alt"></i>
+                    {{ 'site.button.share' | trans | desc('Deel') }}
+                </a>
+
+                {% if app.user %}
+                    <a href="{{ path('api_video_star_video', {'video': video.id}) }}" class="btn {% if star %}btn-secondary{% else %}btn-outline-secondary{% endif %} js-star">
+                        <i class="{% if star %}fa{% else %}far{% endif %} fa-fw fa-star"></i>
+                    </a>
+                {% endif %}
+
             </div>
             <div class="col-12 col-lg-2">
                 <div data-url="{{ path('api_video_random_category', {'category': video.category.id}) }}" id="get-random"></div>
             </div>
         </div>
     </div>
-{% endblock %}
-
-{% block body_javascript %}
-    {{ parent() }}
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-    var player;
-    var playerStatus;
-    var getRandom = document.getElementById('get-random');
-    var pageTitle = document.getElementById('page-title');
-    var nextVideo = false;
-
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        height: '390',
-        width: '640',
-        videoId: '{{ video.video }}',
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
-
-      if (getRandom) {
-        loadNext();
-      }
-    }
-
-    function loadNext() {
-      fetch(getRandom.dataset.url)
-        .then(response => response.json())
-        .then(data => {
-          nextVideo = data.data;
-          setupNextVideo();
-        });
-    }
-
-    function loadNextVideo() {
-      if (!nextVideo) {
-        return;
-      }
-
-      pageTitle.textContent = nextVideo.title;
-      player.loadVideoById(nextVideo.video);
-
-      window.history.pushState(nextVideo.id, nextVideo.title, nextVideo.url);
-
-      loadNext();
-    }
-
-    function setupNextVideo() {
-      const img = document.createElement('img');
-      img.src = `https://img.youtube.com/vi/${nextVideo.video}/hqdefault.jpg`;
-      img.className = 'img-fluid';
-      const strong = document.createElement('strong');
-      strong.textContent = `Next up: ${nextVideo.title}`;
-
-      getRandom.innerHTML = '';
-      getRandom.appendChild(img);
-      getRandom.appendChild(strong);
-    }
-
-    function onPlayerReady(event) {
-      event.target.playVideo();
-      // console.log(event.target);
-    }
-
-    function onPlayerStateChange(event) {
-      playerStatus = event.data;
-      if (playerStatus === YT.PlayerState.ENDED) {
-        loadNextVideo();
-      }
-    }
-
-    getRandom.addEventListener('click', loadNextVideo);
-    document.addEventListener('keydown', checkKey);
-
-    function checkKey(event) {
-      if (event.code.toLowerCase() === 'keyf') {
-        player.f.requestFullscreen();
-      }
-      if (event.code.toLowerCase() === 'space') {
-        if (playerStatus === YT.PlayerState.PLAYING) {
-          player.pauseVideo();
-        }
-        if (playerStatus === YT.PlayerState.PAUSED) {
-          player.playVideo();
-        }
-      }
-    }
-
-    </script>
 {% endblock %}

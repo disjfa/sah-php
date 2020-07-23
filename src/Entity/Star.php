@@ -5,7 +5,6 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Index;
 use Doctrine\ORM\Mapping\UniqueConstraint;
-use Exception;
 use Ramsey\Uuid\Doctrine\UuidGenerator;
 use Ramsey\Uuid\UuidInterface;
 
@@ -38,9 +37,6 @@ class Star
      */
     private $user;
 
-    /**
-     * @throws Exception
-     */
     public function __construct(YoutubeVideo $video, User $user)
     {
         $this->video = $video;

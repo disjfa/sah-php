@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Entity\YoutubeCategory;
 use App\Entity\YoutubeVideo;
+use App\Repository\StarRepository;
 use App\Repository\YoutubeCategoryRepository;
 use App\Repository\YoutubeVideoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class HomeController extends AbstractController
 {
@@ -38,10 +40,16 @@ class HomeController extends AbstractController
     /**
      * @Route("/video/{video}", name="home_video")
      */
-    public function video(YoutubeVideo $video)
+    public function video(YoutubeVideo $video, StarRepository $starRepository)
     {
+        $star = null;
+        if ($this->getUser() instanceof UserInterface) {
+            $star = $starRepository->findOneByItemAndUser($video, $this->getUser());
+        }
+
         return $this->render('home/video.html.twig', [
             'video' => $video,
+            'star' => $star,
         ]);
     }
 }

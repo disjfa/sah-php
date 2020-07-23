@@ -8,6 +8,7 @@ use App\Entity\YoutubeVideo;
 use App\Repository\StarRepository;
 use App\Repository\YoutubeVideoRepository;
 use App\Transformer\YoutubeVideoTransformer;
+use Doctrine\ORM\NonUniqueResultException;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Item;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -59,7 +60,20 @@ class VideoController extends AbstractController
     }
 
     /**
+     * @Route("/video/{video}", name="api_video_video")
+     */
+    public function video(YoutubeVideo $video)
+    {
+        $item = new Item($video, $this->youtubeVideoTransformer);
+        $manager = new Manager();
+
+        return new JsonResponse($manager->createData($item)->toArray());
+    }
+
+    /**
      * @Route("/star/{video}", name="api_video_star_video")
+     *
+     * @throws NonUniqueResultException
      */
     public function starVideo(YoutubeVideo $video, StarRepository $starRepository)
     {
@@ -69,17 +83,18 @@ class VideoController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $star = $starRepository->findOneByItemAndUser($video, $user);
 
-        if (null === $starRepository->findOneByItemAndUser($video, $user)) {
+        if (null === $star) {
             $star = new Star($video, $user);
             $em->persist($star);
             $em->flush();
-            $message = 'starred';
         } else {
             $em->remove($star);
             $em->flush();
-            $message = 'deleted';
         }
 
-        return new JsonResponse(['message' => $message]);
+        $item = new Item($video, $this->youtubeVideoTransformer);
+        $manager = new Manager();
+
+        return new JsonResponse($manager->createData($item)->toArray());
     }
 }
