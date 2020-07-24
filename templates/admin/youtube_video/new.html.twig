@@ -2,9 +2,12 @@
 
 {% block title %}New YoutubeVideo{% endblock %}
 
+{% block content_title %}
+    Create new YoutubeVideo
+{% endblock %}
+
 {% block body %}
-    <div class="container">
-        <h1>Create new YoutubeVideo</h1>
+    <div class="container py-3">
         {{ include('admin/youtube_video/_form.html.twig') }}
         <a href="{{ path('admin_youtube_video_index') }}">back to list</a>
     </div>

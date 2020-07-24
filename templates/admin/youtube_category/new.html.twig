@@ -4,9 +4,12 @@
     New Category
 {% endblock %}
 
+{% block content_title %}
+    Create new Category
+{% endblock %}
+
 {% block body %}
     <div class="container py-3">
-        <h1>Create new Category</h1>
 
         {{ include('admin/youtube_category/_form.html.twig') }}
 

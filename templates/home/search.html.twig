@@ -32,7 +32,9 @@
                 {% for video in videos %}
                     <tr>
                         <td>
-                            <img src="https://img.youtube.com/vi/{{ video.video }}/default.jpg" alt="">
+                            <a href="{{ path('home_video', {'video': video.id}) }}">
+                                <img src="https://img.youtube.com/vi/{{ video.video }}/default.jpg" alt="">
+                            </a>
                         </td>
                         <td>
                             <a href="{{ path('home_video', {'video': video.id}) }}">
@@ -42,6 +44,29 @@
                         <td>
                             {% if video.category %}
                                 {{ video.category.name }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3" class="py-5 lead">
+                            <em>{{ 'site.description.no-results-found' | trans | desc('Helaas, geen resultaten gevonden. Hier wat willekeurigs.') }}</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="{{ path('home_video', {'video': random.id}) }}">
+                                <img src="https://img.youtube.com/vi/{{ random.video }}/hqdefault.jpg" alt="">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('home_video', {'video': random.id}) }}">
+                                {{ random.name }}
+                            </a>
+                        </td>
+                        <td>
+                            {% if random.category %}
+                                {{ random.category.name }}
                             {% endif %}
                         </td>
                     </tr>

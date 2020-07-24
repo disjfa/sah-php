@@ -73,6 +73,7 @@ class HomeController extends AbstractController
         return $this->render('home/search.html.twig', [
             'videos' => $videos,
             'searchForm' => $searchForm->createView(),
+            'random' => $youtubeVideoRepository->getRandom(),
         ]);
     }
 }

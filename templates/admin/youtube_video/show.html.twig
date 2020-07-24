@@ -2,24 +2,36 @@
 
 {% block title %}Video{% endblock %}
 
+{% block content_title %}
+    {{ youtube_video.name }}
+{% endblock %}
+
 {% block body %}
     <div class="container">
         <div class="d-flex justify-content-between py-3">
-            <a href="{{ path('admin_youtube_video_index') }}" class="btn btn-outline-secondary">
-                <i class="fa fa-angle-double-left"></i>
-                back to list
-            </a>
-
+            <div>
+                <a href="{{ path('admin_youtube_video_index') }}" class="btn btn-outline-secondary">
+                    <i class="fa fa-angle-double-left"></i>
+                    back to list
+                </a>
+                <a href="{{ path('admin_youtube_video_edit', {'id': youtube_video.id}) }}" class="btn btn-primary">
+                    <i class="fa fa-pencil-alt"></i>
+                    edit
+                </a>
+            </div>
 
             {{ include('admin/youtube_video/_delete_form.html.twig') }}
         </div>
-        <h1>{{ youtube_video.name }}</h1>
+
+        <div class="embed-responsive embed-responsive-16by9">
+            <div id="player"></div>
+        </div>
 
         <table class="table">
             <tbody>
             <tr>
                 <th>VideoId</th>
-                <td>{{ youtube_video.duration }}</td>
+                <td>{{ youtube_video.video }}</td>
             </tr>
             <tr>
                 <th>Created</th>
@@ -38,4 +50,21 @@
             edit
         </a>
     </div>
+{% endblock %}
+
+{% block body_javascript %}
+    {{ parent() }}
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: '{{ youtube_video.video }}',
+        playerVars: {
+          'autoplay': 0,
+        },
+      });
+    }
+    </script>
 {% endblock %}

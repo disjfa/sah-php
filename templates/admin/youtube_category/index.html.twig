@@ -4,10 +4,12 @@
     Category index
 {% endblock %}
 
+{% block content_title %}
+    Category index
+{% endblock %}
+
 {% block body %}
     <div class="container py-3">
-        <h1>Category index</h1>
-
         <div class="pb-3">
             <a href="{{ path('admin_youtube_category_new') }}" class="btn btn-primary">
                 <i class="fa fa-plus"></i>

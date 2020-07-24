@@ -8,14 +8,33 @@
     Videos
 {% endblock %}
 
+{% block content_title %}
+    Videos
+{% endblock %}
+
 {% block body %}
     <div class="container py-3">
-        <h1>Videos</h1>
-        <div class="pb-3">
+        <div class="pb-3 d-md-flex">
             <a href="{{ path('admin_youtube_video_new') }}" class="btn btn-primary">
                 <i class="fa fa-plus"></i>
                 Create new
             </a>
+            <div class="py-md-0 py-3 px-md-2">
+                {{ form_start(searchForm) }}
+
+                <div class="input-group">
+                    {{ form_widget(searchForm.q) }}
+                    {{ form_widget(searchForm.category) }}
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary" accesskey="s">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                {{ form_rest(searchForm) }}
+                {{ form_end(searchForm) }}
+            </div>
         </div>
 
         <div class="navigation">
@@ -37,7 +56,11 @@
                 {% for youtube_video in youtube_videos %}
                     <tr>
                         <td><img src="https://img.youtube.com/vi/{{ youtube_video.video }}/default.jpg" alt=""></td>
-                        <td>{{ youtube_video.name }}</td>
+                        <td>
+                            <a href="{{ path('admin_youtube_video_show', {'id': youtube_video.id}) }}">
+                                {{ youtube_video.name }}
+                            </a>
+                        </td>
                         <td>
                             {% if youtube_video.category %}
                                 {{ youtube_video.category.name }}

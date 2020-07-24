@@ -3,7 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\YoutubeVideo;
+use App\Form\YoutubeVideoQueryType;
 use App\Form\YoutubeVideoType;
+use App\Query\YoutubeVideoQuery;
 use App\Repository\YoutubeVideoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,8 +22,13 @@ class YoutubeVideoController extends AbstractController
      */
     public function index(YoutubeVideoRepository $youtubeVideoRepository, Request $request): Response
     {
+        $youtubeVideoQuery = new YoutubeVideoQuery();
+        $searchForm = $this->createForm(YoutubeVideoQueryType::class, $youtubeVideoQuery);
+        $searchForm->handleRequest($request);
+
         return $this->render('admin/youtube_video/index.html.twig', [
-            'youtube_videos' => $youtubeVideoRepository->findPaginated($request->query->getInt('page', 1), $request->query->get('q')),
+            'youtube_videos' => $youtubeVideoRepository->findPaginated($request->query->getInt('page', 1), $youtubeVideoQuery),
+            'searchForm' => $searchForm->createView(),
         ]);
     }
 
@@ -83,7 +90,7 @@ class YoutubeVideoController extends AbstractController
      */
     public function delete(Request $request, YoutubeVideo $youtubeVideo): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$youtubeVideo->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $youtubeVideo->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($youtubeVideo);
             $entityManager->flush();
