@@ -31,12 +31,17 @@ class User implements UserInterface, Serializable
      * @var string|null
      * @ORM\Column(type="string", nullable=true)
      */
-    protected $facebookId;
+    private $facebookId;
     /**
      * @var string|null
      * @ORM\Column(type="string", nullable=true)
      */
-    protected $facebookAccessToken;
+    private $facebookAccessToken;
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $name;
 
     /**
      * @var string
@@ -59,6 +64,22 @@ class User implements UserInterface, Serializable
         $this->email = $email;
 
         return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string|null $name
+     */
+    public function setName(?string $name): void
+    {
+        $this->name = $name;
     }
 
     /**

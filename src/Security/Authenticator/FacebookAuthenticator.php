@@ -11,6 +11,7 @@ use KnpU\OAuth2ClientBundle\Client\Provider\FacebookClient;
 use KnpU\OAuth2ClientBundle\Security\Authenticator\SocialAuthenticator;
 use League\OAuth2\Client\Provider\FacebookUser;
 use League\OAuth2\Client\Token\AccessToken;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -98,6 +99,7 @@ class FacebookAuthenticator extends SocialAuthenticator
             $user = new User();
             $user->setName($facebookUser->getName());
             $user->setEmail($facebookUser->getEmail());
+            $user->setPassword(Uuid::uuid4());
         }
 
         $user->setFacebookId($facebookUser->getId());

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="en">
   <file id="messages.en">
+    <unit id="XdjmwSf" name="site.navbar.title">
+      <notes>
+        <note category="file-source" priority="1">templates/home/index.html.twig:4</note>
+        <note category="file-source" priority="1">templates/base.html.twig:12</note>
+      </notes>
+      <segment>
+        <source>site.navbar.title</source>
+        <target></target>
+      </segment>
+    </unit>
     <unit id="7uFjkBg" name="home.offline.heading">
       <notes>
         <note category="file-source" priority="1">templates/home/offline.html.twig:6</note>
@@ -47,6 +57,16 @@
       <segment>
         <source>home.offline.paragraph2</source>
         <target>When you are back online you can check out the entire site again. Sorry for now!</target>
+      </segment>
+    </unit>
+    <unit id="28GnThW" name="site.button.share">
+      <notes>
+        <note category="file-source" priority="1">templates/home/video.html.twig:27</note>
+        <note category="desc" priority="1">Deel</note>
+      </notes>
+      <segment>
+        <source>site.button.share</source>
+        <target></target>
       </segment>
     </unit>
     <unit id="wglJKFL" name="admin.dashboard.page_title">
@@ -214,19 +234,18 @@
         <target>Profile image</target>
       </segment>
     </unit>
-    <unit id="XdjmwSf" name="site.navbar.title">
+    <unit id="3WzSCTi" name="site.meta.title">
       <notes>
-        <note category="file-source" priority="1">templates/base.html.twig:8</note>
-        <note category="state" priority="1">new</note>
+        <note category="file-source" priority="1">templates/base.html.twig:4</note>
       </notes>
       <segment>
-        <source>site.navbar.title</source>
+        <source>site.meta.title</source>
         <target></target>
       </segment>
     </unit>
     <unit id="qQ0clFV" name="site.navbar.logout">
       <notes>
-        <note category="file-source" priority="1">templates/base.html.twig:15</note>
+        <note category="file-source" priority="1">templates/base.html.twig:19</note>
       </notes>
       <segment>
         <source>site.navbar.logout</source>
@@ -235,7 +254,7 @@
     </unit>
     <unit id="HvyHuCV" name="site.navbar.login">
       <notes>
-        <note category="file-source" priority="1">templates/base.html.twig:24</note>
+        <note category="file-source" priority="1">templates/base.html.twig:28</note>
       </notes>
       <segment>
         <source>site.navbar.login</source>
@@ -245,65 +264,10 @@
     <unit id="zxJr5WA" name="site.header.login">
       <notes>
         <note category="file-source" priority="1">templates/security/login.html.twig:3</note>
-        <note category="file-source" priority="1">templates/security/login.html.twig:12</note>
       </notes>
       <segment>
         <source>site.header.login</source>
         <target>Please sign in</target>
-      </segment>
-    </unit>
-    <unit id="NyvUbEU" name="site.message.loggedin">
-      <notes>
-        <note category="file-source" priority="1">templates/security/login.html.twig:20</note>
-      </notes>
-      <segment>
-        <source>site.message.loggedin</source>
-        <target>You are logged in as %username%,</target>
-      </segment>
-    </unit>
-    <unit id="Fe8s43Z" name="site.button.logout">
-      <notes>
-        <note category="file-source" priority="1">templates/security/login.html.twig:21</note>
-      </notes>
-      <segment>
-        <source>site.button.logout</source>
-        <target>Logout</target>
-      </segment>
-    </unit>
-    <unit id="0k48KgV" name="site.label.email">
-      <notes>
-        <note category="file-source" priority="1">templates/security/login.html.twig:25</note>
-      </notes>
-      <segment>
-        <source>site.label.email</source>
-        <target>Email</target>
-      </segment>
-    </unit>
-    <unit id="xyP2wiV" name="site.label.password">
-      <notes>
-        <note category="file-source" priority="1">templates/security/login.html.twig:29</note>
-      </notes>
-      <segment>
-        <source>site.label.password</source>
-        <target>Password</target>
-      </segment>
-    </unit>
-    <unit id="qKp9ADo" name="site.label.remember_me">
-      <notes>
-        <note category="file-source" priority="1">templates/security/login.html.twig:35</note>
-      </notes>
-      <segment>
-        <source>site.label.remember_me</source>
-        <target>Remember me</target>
-      </segment>
-    </unit>
-    <unit id="_epJUSY" name="site.button.login">
-      <notes>
-        <note category="file-source" priority="1">templates/security/login.html.twig:40</note>
-      </notes>
-      <segment>
-        <source>site.button.login</source>
-        <target>Login</target>
       </segment>
     </unit>
     <unit id="okluDoz" name="users.translation.page_title">
@@ -320,7 +284,7 @@
     </unit>
     <unit id="gqNTf.D" name="name">
       <notes>
-        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:20</note>
+        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:19</note>
         <note category="file-source" priority="1">src/Form/YoutubeCategoryType.php:16</note>
       </notes>
       <segment>
@@ -330,7 +294,7 @@
     </unit>
     <unit id="yqea9Nt" name="duration">
       <notes>
-        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:21</note>
+        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:20</note>
       </notes>
       <segment>
         <source>duration</source>
@@ -339,7 +303,7 @@
     </unit>
     <unit id="DKsclhd" name="video">
       <notes>
-        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:22</note>
+        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:21</note>
       </notes>
       <segment>
         <source>video</source>
@@ -348,7 +312,7 @@
     </unit>
     <unit id="7bLNO3T" name="category">
       <notes>
-        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:23</note>
+        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:22</note>
       </notes>
       <segment>
         <source>category</source>
@@ -366,7 +330,7 @@
     </unit>
     <unit id="1H0cY_J" name="user.choice.role_user">
       <notes>
-        <note category="file-source" priority="1">src/Form/Type/UserType.php:33</note>
+        <note category="file-source" priority="1">src/Form/Type/UserType.php:22</note>
         <note priority="1">src/Form/Type/UserType.php:42</note>
       </notes>
       <segment>
@@ -376,7 +340,7 @@
     </unit>
     <unit id="sP1CS8D" name="user.choice.role_admin">
       <notes>
-        <note category="file-source" priority="1">src/Form/Type/UserType.php:33</note>
+        <note category="file-source" priority="1">src/Form/Type/UserType.php:22</note>
         <note priority="1">src/Form/Type/UserType.php:42</note>
       </notes>
       <segment>
@@ -386,7 +350,7 @@
     </unit>
     <unit id="JNryrvg" name="user.label.email">
       <notes>
-        <note category="file-source" priority="1">src/Form/Type/UserType.php:28</note>
+        <note category="file-source" priority="1">src/Form/Type/UserType.php:17</note>
         <note priority="1">src/Form/Type/UserType.php:37</note>
       </notes>
       <segment>
@@ -396,7 +360,7 @@
     </unit>
     <unit id="mnGh1V8" name="user.label.roles">
       <notes>
-        <note category="file-source" priority="1">src/Form/Type/UserType.php:32</note>
+        <note category="file-source" priority="1">src/Form/Type/UserType.php:21</note>
         <note priority="1">src/Form/Type/UserType.php:41</note>
       </notes>
       <segment>
@@ -450,6 +414,60 @@
       <segment>
         <source>admin.menu.users</source>
         <target>Users</target>
+      </segment>
+    </unit>
+    <unit id="NyvUbEU" name="site.message.loggedin">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>site.message.loggedin</source>
+        <target>You are logged in as %username%,</target>
+      </segment>
+    </unit>
+    <unit id="Fe8s43Z" name="site.button.logout">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>site.button.logout</source>
+        <target>Logout</target>
+      </segment>
+    </unit>
+    <unit id="0k48KgV" name="site.label.email">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>site.label.email</source>
+        <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="xyP2wiV" name="site.label.password">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>site.label.password</source>
+        <target>Password</target>
+      </segment>
+    </unit>
+    <unit id="qKp9ADo" name="site.label.remember_me">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>site.label.remember_me</source>
+        <target>Remember me</target>
+      </segment>
+    </unit>
+    <unit id="_epJUSY" name="site.button.login">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>site.button.login</source>
+        <target>Login</target>
       </segment>
     </unit>
     <unit id="tITgZsF" name="site.menu.home">
