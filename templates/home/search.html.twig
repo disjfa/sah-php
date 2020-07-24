@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block meta_og %}
+    <meta property="og:title" content="Zoeken | {{ 'site.navbar.title' | trans }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ absolute_url(path('home_search')) }}">
+    <meta property="og:image" content="{{ absolute_url(asset('img/logo.jpg')) }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container py-3">
+        <h1>{{ 'site.title.search' | trans | desc('Zoeken') }}</h1>
+
+        {{ form_start(searchForm) }}
+
+        <div class="input-group mb-3">
+            {{ form_widget(searchForm.q) }}
+            {{ form_widget(searchForm.category) }}
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary" accesskey="s">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        {{ form_rest(searchForm) }}
+        {{ form_end(searchForm) }}
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                {% for video in videos %}
+                    <tr>
+                        <td>
+                            <img src="https://img.youtube.com/vi/{{ video.video }}/default.jpg" alt="">
+                        </td>
+                        <td>
+                            <a href="{{ path('home_video', {'video': video.id}) }}">
+                                {{ video.name }}
+                            </a>
+                        </td>
+                        <td>
+                            {% if video.category %}
+                                {{ video.category.name }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="navigation d-flex justify-content-center py-3">
+            {{ knp_pagination_render(videos) }}
+        </div>
+    </div>
+{% endblock %}

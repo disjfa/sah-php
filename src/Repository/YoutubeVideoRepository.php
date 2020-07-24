@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\YoutubeCategory;
 use App\Entity\YoutubeVideo;
+use App\Query\YoutubeVideoQuery;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
@@ -46,26 +47,29 @@ class YoutubeVideoRepository extends ServiceEntityRepository
         return $qq->getQuery()->getOneOrNullResult();
     }
 
-    public function findPaginated(int $page = 1, string $search = null, YoutubeCategory $youtubeCategory = null)
+    public function findPaginated(int $page = 1, YoutubeVideoQuery $videoQuery = null)
     {
         $qb = $this->createQueryBuilder('youtubeVideo');
 
-        if ($search) {
-            $qb->andWhere('youtubeVideo.name LIKE :search');
-            $qb->setParameter('search', "%$search%");
-        }
+        if ($videoQuery) {
+            $search = $videoQuery->getQ();
+            if ($search) {
+                $qb->andWhere('youtubeVideo.name LIKE :search');
+                $qb->setParameter('search', "%$search%");
+            }
 
-        if (null !== $youtubeCategory) {
-            $qb->andWhere('youtubeVideo.category = :category');
-            $qb->setParameter('category', $youtubeCategory);
-        }
-
+            $youtubeCategory = $videoQuery->getCategory();
+            if ($youtubeCategory) {
+                $qb->andWhere('youtubeVideo.category = :category');
+                $qb->setParameter('category', $youtubeCategory);
+            }
 //        if (null !== $public) {
 //            $qb->andWhere('youtubeVideo.public = :public');
 //            $qb->setParameter('public', $public);
 //        }
+        }
 
-        return $this->paginator->paginate($qb, $page, 24, [
+        return $this->paginator->paginate($qb, $page, 2, [
             PaginatorInterface::DEFAULT_SORT_FIELD_NAME => 'youtubeVideo.created',
             PaginatorInterface::DEFAULT_SORT_DIRECTION => 'desc',
         ]);

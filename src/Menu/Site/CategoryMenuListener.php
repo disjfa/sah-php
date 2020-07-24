@@ -34,6 +34,11 @@ class CategoryMenuListener implements EventSubscriberInterface
                 ],
             ]);
         }
+
+        $menu->addChild('search', [
+            'route' => 'home_search',
+            'label' => 'Zoeken',
+        ]);
     }
 
     /**
