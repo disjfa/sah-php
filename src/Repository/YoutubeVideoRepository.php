@@ -69,7 +69,7 @@ class YoutubeVideoRepository extends ServiceEntityRepository
 //        }
         }
 
-        return $this->paginator->paginate($qb, $page, 2, [
+        return $this->paginator->paginate($qb, $page, 24, [
             PaginatorInterface::DEFAULT_SORT_FIELD_NAME => 'youtubeVideo.created',
             PaginatorInterface::DEFAULT_SORT_DIRECTION => 'desc',
         ]);
