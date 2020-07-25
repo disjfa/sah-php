@@ -38,6 +38,7 @@ class YoutubeVideoController extends AbstractController
     public function new(Request $request): Response
     {
         $youtubeVideo = new YoutubeVideo();
+        $youtubeVideo->setPublic(true);
         $form = $this->createForm(YoutubeVideoType::class, $youtubeVideo);
         $form->handleRequest($request);
 
