@@ -22,7 +22,7 @@ class YoutubeVideoController extends AbstractController
      */
     public function index(YoutubeVideoRepository $youtubeVideoRepository, Request $request): Response
     {
-        $youtubeVideoQuery = new YoutubeVideoQuery();
+        $youtubeVideoQuery = new YoutubeVideoQuery(null);
         $searchForm = $this->createForm(YoutubeVideoQueryType::class, $youtubeVideoQuery);
         $searchForm->handleRequest($request);
 
@@ -90,7 +90,7 @@ class YoutubeVideoController extends AbstractController
      */
     public function delete(Request $request, YoutubeVideo $youtubeVideo): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $youtubeVideo->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$youtubeVideo->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($youtubeVideo);
             $entityManager->flush();

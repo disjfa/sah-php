@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\YoutubeCategory;
 use App\Entity\YoutubeVideo;
 use App\Form\YoutubeVideoQueryType;
+use App\Manager\YoutubeStatsManager;
 use App\Query\YoutubeVideoQuery;
 use App\Repository\StarRepository;
 use App\Repository\YoutubeCategoryRepository;
@@ -45,12 +46,14 @@ class HomeController extends AbstractController
     /**
      * @Route("/video/{video}", name="home_video")
      */
-    public function video(YoutubeVideo $video, StarRepository $starRepository)
+    public function video(YoutubeVideo $video, StarRepository $starRepository, YoutubeStatsManager $youtubeStatsManager)
     {
         $star = null;
         if ($this->getUser() instanceof UserInterface) {
             $star = $starRepository->findOneByItemAndUser($video, $this->getUser());
         }
+
+        $youtubeStatsManager->add($video, 'show');
 
         return $this->render('home/video.html.twig', [
             'video' => $video,

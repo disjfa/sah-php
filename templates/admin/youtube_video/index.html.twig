@@ -45,6 +45,7 @@
                 <thead>
                 <tr>
                     <th></th>
+                    <th></th>
                     <th>{{ knp_pagination_sortable(youtube_videos, 'youtubeVideo.table.name' | trans, 'youtubeVideo.name') }}</th>
                     <th>Category</th>
                     <th>{{ knp_pagination_sortable(youtube_videos, 'youtubeVideo.table.duration' | trans, 'youtubeVideo.duration') }}</th>
@@ -55,6 +56,13 @@
                 <tbody>
                 {% for youtube_video in youtube_videos %}
                     <tr>
+                        <td>
+                            {% if youtube_video.public %}
+                                <i class="fa fa-fw fa-check text-success"></i>
+                            {% else %}
+                                <i class="fa fa-fw fa-minus text-secondary"></i>
+                            {% endif %}
+                        </td>
                         <td><img src="https://img.youtube.com/vi/{{ youtube_video.video }}/default.jpg" alt=""></td>
                         <td>
                             <a href="{{ path('admin_youtube_video_show', {'id': youtube_video.id}) }}">

@@ -28,6 +28,11 @@ class YoutubeVideo
     private $name;
 
     /**
+     * @ORM\Column(type="boolean", options={"default" : true})
+     */
+    private $public;
+
+    /**
      * @ORM\Column(type="string")
      */
     private $video;
@@ -79,6 +84,22 @@ class YoutubeVideo
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * @param mixed $public
+     */
+    public function setPublic($public): void
+    {
+        $this->public = $public;
     }
 
     /**

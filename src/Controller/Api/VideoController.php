@@ -5,6 +5,7 @@ namespace App\Controller\Api;
 use App\Entity\Star;
 use App\Entity\YoutubeCategory;
 use App\Entity\YoutubeVideo;
+use App\Manager\YoutubeStatsManager;
 use App\Repository\StarRepository;
 use App\Repository\YoutubeVideoRepository;
 use App\Transformer\YoutubeVideoTransformer;
@@ -50,11 +51,13 @@ class VideoController extends AbstractController
     /**
      * @Route("/random/{category}", name="api_video_random_category")
      */
-    public function randomCategory(YoutubeCategory $category)
+    public function randomCategory(YoutubeCategory $category, YoutubeStatsManager $youtubeStatsManager)
     {
         $video = $this->youtubeVideoRepository->getRandom($category);
         $item = new Item($video, $this->youtubeVideoTransformer);
         $manager = new Manager();
+
+        $youtubeStatsManager->add($video, 'random');
 
         return new JsonResponse($manager->createData($item)->toArray());
     }
@@ -66,6 +69,19 @@ class VideoController extends AbstractController
     {
         $item = new Item($video, $this->youtubeVideoTransformer);
         $manager = new Manager();
+
+        return new JsonResponse($manager->createData($item)->toArray());
+    }
+
+    /**
+     * @Route("/video/{video}/finish", name="api_video_video_finish")
+     */
+    public function finish(YoutubeVideo $video, YoutubeStatsManager $youtubeStatsManager)
+    {
+        $item = new Item($video, $this->youtubeVideoTransformer);
+        $manager = new Manager();
+
+        $youtubeStatsManager->add($video, 'finish');
 
         return new JsonResponse($manager->createData($item)->toArray());
     }

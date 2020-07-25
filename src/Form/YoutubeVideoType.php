@@ -7,6 +7,7 @@ use App\Entity\YoutubeVideo;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,6 +20,9 @@ class YoutubeVideoType extends AbstractType
         $builder->add('name', TextType::class);
         $builder->add('duration', NumberType::class);
         $builder->add('video', TextType::class);
+        $builder->add('public', CheckboxType::class, [
+            'required' => false,
+        ]);
         $builder->add('category', EntityType::class, [
             'class' => YoutubeCategory::class,
             'expanded' => true,

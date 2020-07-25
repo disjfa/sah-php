@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Query;
-
 
 use App\Entity\YoutubeCategory;
 
@@ -19,34 +17,42 @@ class YoutubeVideoQuery
     private $category;
 
     /**
-     * @return string|null
+     * @var bool|null
      */
+    private $public;
+
+    public function __construct($public = true)
+    {
+        $this->public = $public;
+    }
+
     public function getQ(): ?string
     {
         return $this->q;
     }
 
-    /**
-     * @param string|null $q
-     */
     public function setQ(?string $q): void
     {
         $this->q = $q;
     }
 
-    /**
-     * @return YoutubeCategory|null
-     */
     public function getCategory(): ?YoutubeCategory
     {
         return $this->category;
     }
 
-    /**
-     * @param YoutubeCategory|null $category
-     */
     public function setCategory(?YoutubeCategory $category): void
     {
         $this->category = $category;
+    }
+
+    public function getPublic(): ?bool
+    {
+        return $this->public;
+    }
+
+    public function setPublic(?bool $public): void
+    {
+        $this->public = $public;
     }
 }

@@ -63,10 +63,12 @@ class YoutubeVideoRepository extends ServiceEntityRepository
                 $qb->andWhere('youtubeVideo.category = :category');
                 $qb->setParameter('category', $youtubeCategory);
             }
-//        if (null !== $public) {
-//            $qb->andWhere('youtubeVideo.public = :public');
-//            $qb->setParameter('public', $public);
-//        }
+
+            $public = $videoQuery->getPublic();
+            if (null !== $public) {
+                $qb->andWhere('youtubeVideo.public = :public');
+                $qb->setParameter('public', $public);
+            }
         }
 
         return $this->paginator->paginate($qb, $page, 24, [

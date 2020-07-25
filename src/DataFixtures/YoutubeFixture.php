@@ -2,7 +2,6 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\User;
 use App\Entity\YoutubeCategory;
 use App\Entity\YoutubeVideo;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -63,7 +62,7 @@ class YoutubeFixture extends Fixture
 
             foreach ($cat['videos'] as $vid) {
                 $video = new YoutubeVideo();
-                $video->setCategory($category);;
+                $video->setCategory($category);
                 $video->setName($vid['name']);
                 $video->setVideo($vid['video']);
                 $video->setDuration($vid['duration']);
