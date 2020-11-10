@@ -10,14 +10,14 @@ The assets are built using the config in `webpack.config.js`. Quick peek:
   // will create public/build/app.js and public/build/app.css
 Encore
   .addEntry('admin', './assets/admin/js/admin.js')
-  .addEntry('site', './assets/site/js/site.js')
+  .addEntry('site', './assets/site/js/app.ts')
 ``` 
 Are built to:
 ```
 public/build/admin.css
 public/build/admin.js
 public/build/site.css
-public/build/site.js
+public/build/app.ts
 public/build/manifest.json
 ```
 The `manifest.json` file is used in `config/packages/framework.yaml` so we can enable versioning in the files, 

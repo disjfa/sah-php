@@ -11,9 +11,11 @@ use App\Repository\YoutubeVideoRepository;
 use App\Transformer\YoutubeVideoTransformer;
 use Doctrine\ORM\NonUniqueResultException;
 use League\Fractal\Manager;
+use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -34,6 +36,24 @@ class VideoController extends AbstractController
     {
         $this->youtubeVideoRepository = $youtubeVideoRepository;
         $this->youtubeVideoTransformer = $youtubeVideoTransformer;
+    }
+
+    /**
+     * @Route("", name="api_video_index")
+     */
+    public function index(Request $request)
+    {
+        $videos = $this->youtubeVideoRepository->findPaginated($request->query->getInt('page', 1));
+        $items = new Collection($videos, $this->youtubeVideoTransformer);
+        $items->setMeta([
+            'page' => $videos->getCurrentPageNumber(),
+            'items' => $videos->getTotalItemCount(),
+            'pages' => ceil($videos->getTotalItemCount() / $videos->getItemNumberPerPage()),
+        ]);
+
+        $manager = new Manager();
+
+        return new JsonResponse($manager->createData($items)->toArray());
     }
 
     /**
