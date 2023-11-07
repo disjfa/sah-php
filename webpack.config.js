@@ -9,18 +9,18 @@ Encore
   // will create public/build/app.js and public/build/app.css
   .addEntry('admin', './assets/admin/js/admin.js')
   .addEntry('site', './assets/site/js/site.ts')
-  .addEntry('app', './assets/app/js/app.ts')
+  // .addEntry('app', './assets/app/js/app.ts')
   // allow sass/scss files to be processed
   .enableSassLoader()
   // allow legacy applications to use $/jQuery as a global variable
-  .autoProvidejQuery()
+  // .autoProvidejQuery()
   .enableSourceMaps(!Encore.isProduction())
   // enable vue
-  .enableVueLoader(() => {}, {
-    version: 3,
-    runtimeCompilerBuild: true,
-  })
-  .enableTypeScriptLoader()
+  // .enableVueLoader(() => {}, {
+  //   version: 3,
+  //   runtimeCompilerBuild: true,
+  // })
+  // .enableTypeScriptLoader()
   // show OS notifications when builds finish/fail
   .enableBuildNotifications()
   .enableSingleRuntimeChunk()

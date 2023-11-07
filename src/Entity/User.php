@@ -170,4 +170,9 @@ class User implements UserInterface, Serializable
     {
         $this->facebookAccessToken = $facebookAccessToken;
     }
+
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
 }

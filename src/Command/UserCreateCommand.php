@@ -11,6 +11,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -31,17 +32,17 @@ class UserCreateCommand extends Command
      */
     private $validator;
     /**
-     * @var UserPasswordEncoderInterface
+     * @var UserPasswordHasherInterface
      */
-    private $userPasswordEncoder;
+    private $userPasswordHasher;
 
-    public function __construct(EntityManagerInterface $entityManager, ValidatorInterface $validator, UserPasswordEncoderInterface $userPasswordEncoder)
+    public function __construct(EntityManagerInterface $entityManager, ValidatorInterface $validator, UserPasswordHasherInterface $userPasswordHasher)
     {
         parent::__construct(self::$defaultName);
 
         $this->entityManager = $entityManager;
         $this->validator = $validator;
-        $this->userPasswordEncoder = $userPasswordEncoder;
+        $this->userPasswordHasher = $userPasswordHasher;
     }
 
     protected function configure()
@@ -90,7 +91,7 @@ class UserCreateCommand extends Command
 
         $user = new User();
         $user->setEmail($email);
-        $user->setPassword($this->userPasswordEncoder->encodePassword($user, $password));
+        $user->setPassword($this->userPasswordHasher->hashPassword($user, $password));
 
         try {
             $this->entityManager->persist($user);

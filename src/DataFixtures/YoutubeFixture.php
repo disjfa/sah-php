@@ -5,7 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\YoutubeCategory;
 use App\Entity\YoutubeVideo;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 
 class YoutubeFixture extends Fixture
 {
@@ -66,6 +66,7 @@ class YoutubeFixture extends Fixture
                 $video->setName($vid['name']);
                 $video->setVideo($vid['video']);
                 $video->setDuration($vid['duration']);
+                $video->setPublic(true);
                 $manager->persist($video);
             }
         }

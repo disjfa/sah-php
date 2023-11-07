@@ -7,4 +7,7 @@
 @import '~glynn-admin/scss/sidebar';
 //@import '~glynn-admin/scss/message';
 
-
+.page-main-bg,
+.page {
+  background-color: var(--bs-body-bg);
+}
