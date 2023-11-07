@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\Star;
 use App\Entity\YoutubeVideo;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\NonUniqueResultException;
 use Symfony\Component\Security\Core\User\UserInterface;
 

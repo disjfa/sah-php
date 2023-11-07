@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use App\Form\Type\UserType;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,20 +38,17 @@ class UserController extends AbstractController
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
-     */
-    private function handleUserForm(User $user, Request $request)
+    private function handleUserForm(User $user, Request $request, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            if ( ! $user->getPassword()) {
+            if (!$user->getPassword()) {
                 $user->setPassword(uniqid());
             }
 
-            $this->getDoctrine()->getManager()->persist($user);
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager->persist($user);
+            $entityManager->flush();
 
             return $this->redirectToRoute('admin_user_show', ['user' => $user->getId()]);
         }
@@ -65,11 +63,11 @@ class UserController extends AbstractController
      *
      * @return Response
      */
-    public function create(Request $request)
+    public function create(Request $request, EntityManagerInterface $entityManager)
     {
         $user = new User();
 
-        return $this->handleUserForm($user, $request);
+        return $this->handleUserForm($user, $request, $entityManager);
     }
 
     /**
@@ -87,8 +85,8 @@ class UserController extends AbstractController
      *
      * @return Response
      */
-    public function edit(User $user, Request $request)
+    public function edit(User $user, Request $request, EntityManagerInterface $entityManager)
     {
-        return $this->handleUserForm($user, $request);
+        return $this->handleUserForm($user, $request, $entityManager);
     }
 }

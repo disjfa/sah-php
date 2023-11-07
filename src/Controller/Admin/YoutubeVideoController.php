@@ -7,6 +7,7 @@ use App\Form\YoutubeVideoQueryType;
 use App\Form\YoutubeVideoType;
 use App\Query\YoutubeVideoQuery;
 use App\Repository\YoutubeVideoRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,7 +36,7 @@ class YoutubeVideoController extends AbstractController
     /**
      * @Route("/new", name="admin_youtube_video_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $youtubeVideo = new YoutubeVideo();
         $youtubeVideo->setPublic(true);
@@ -43,7 +44,6 @@ class YoutubeVideoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($youtubeVideo);
             $entityManager->flush();
 
@@ -69,13 +69,13 @@ class YoutubeVideoController extends AbstractController
     /**
      * @Route("/{id}/edit", name="admin_youtube_video_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, YoutubeVideo $youtubeVideo): Response
+    public function edit(Request $request, YoutubeVideo $youtubeVideo, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(YoutubeVideoType::class, $youtubeVideo);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager->flush();
 
             return $this->redirectToRoute('admin_youtube_video_index');
         }
@@ -89,10 +89,9 @@ class YoutubeVideoController extends AbstractController
     /**
      * @Route("/{id}", name="admin_youtube_video_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, YoutubeVideo $youtubeVideo): Response
+    public function delete(Request $request, YoutubeVideo $youtubeVideo, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$youtubeVideo->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($youtubeVideo);
             $entityManager->flush();
         }

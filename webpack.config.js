@@ -2,7 +2,7 @@
 const Encore = require('@symfony/webpack-encore');
 
 Encore
-// the project directory where all compiled assets will be stored
+  // the project directory where all compiled assets will be stored
   .setOutputPath('public/build/')
   // the public path used by the web server to access the previous directory
   .setPublicPath('/build')
@@ -24,17 +24,17 @@ Encore
   // show OS notifications when builds finish/fail
   .enableBuildNotifications()
   .enableSingleRuntimeChunk()
-;
+  ;
 
 if (Encore.isProduction()) {
   Encore
-  // Enable post css loader
+    // Enable post css loader
     .enablePostCssLoader()
     // empty the outputPath dir before each build
     .cleanupOutputBeforeBuild()
     // create hashed filenames (e.g. app.abc123.css)
     .enableVersioning()
-  ;
+    ;
 }
 
 // export the final configuration
