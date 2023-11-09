@@ -116,15 +116,6 @@
             "ref": "bb31a3bbec00a8fc8aa1c9fbf9b0ef9fc492f93d"
         }
     },
-    "guzzlehttp/guzzle": {
-        "version": "6.3.3"
-    },
-    "guzzlehttp/promises": {
-        "version": "v1.3.1"
-    },
-    "guzzlehttp/psr7": {
-        "version": "1.5.2"
-    },
     "imagine/imagine": {
         "version": "v0.7.1"
     },
@@ -140,18 +131,6 @@
     "knplabs/knp-paginator-bundle": {
         "version": "v2.8.0"
     },
-    "knpuniversity/oauth2-client-bundle": {
-        "version": "1.20",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "1.20",
-            "ref": "80acc9223a205cbf5d9828fd616c82a374d281dd"
-        },
-        "files": [
-            "config/packages/knpu_oauth2_client.yaml"
-        ]
-    },
     "laminas/laminas-eventmanager": {
         "version": "3.3.0"
     },
@@ -160,12 +139,6 @@
     },
     "league/fractal": {
         "version": "0.19.2"
-    },
-    "league/oauth2-client": {
-        "version": "2.5.0"
-    },
-    "league/oauth2-facebook": {
-        "version": "2.0.1"
     },
     "liip/imagine-bundle": {
         "version": "2.12",
@@ -185,6 +158,18 @@
     },
     "nyholm/nsa": {
         "version": "1.1.0"
+    },
+    "nyholm/psr7": {
+        "version": "1.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "4a8c0345442dcca1d8a2c65633dcf0285dd5a5a2"
+        },
+        "files": [
+            "config/packages/nyholm_psr7.yaml"
+        ]
     },
     "ocramius/package-versions": {
         "version": "1.2.0"
@@ -225,14 +210,8 @@
     "psr/container": {
         "version": "1.0.0"
     },
-    "psr/http-message": {
-        "version": "1.0.1"
-    },
     "psr/log": {
         "version": "1.0.2"
-    },
-    "ralouphie/getallheaders": {
-        "version": "2.0.5"
     },
     "ramsey/collection": {
         "version": "1.0.1"
@@ -330,6 +309,18 @@
     "symfony/intl": {
         "version": "v4.0.3"
     },
+    "symfony/mailer": {
+        "version": "6.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "4.3",
+            "ref": "2bf89438209656b85b9a49238c4467bff1b1f939"
+        },
+        "files": [
+            "config/packages/mailer.yaml"
+        ]
+    },
     "symfony/maker-bundle": {
         "version": "1.0",
         "recipe": {
@@ -338,6 +329,18 @@
             "version": "1.0",
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
+    },
+    "symfony/notifier": {
+        "version": "6.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.0",
+            "ref": "178877daf79d2dbd62129dd03612cb1a2cb407cc"
+        },
+        "files": [
+            "config/packages/notifier.yaml"
+        ]
     },
     "symfony/options-resolver": {
         "version": "v4.0.3"
@@ -392,6 +395,15 @@
     },
     "symfony/security-http": {
         "version": "v4.2.1"
+    },
+    "symfony/sendinblue-mailer": {
+        "version": "6.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.2",
+            "ref": "ae1cf494ce06b9a4578a8445c610402a1676ee8d"
+        }
     },
     "symfony/service-contracts": {
         "version": "v1.1.5"
@@ -477,6 +489,9 @@
     },
     "symfony/yaml": {
         "version": "v4.4.0"
+    },
+    "twig/extra-bundle": {
+        "version": "v3.7.1"
     },
     "twig/twig": {
         "version": "v2.4.4"

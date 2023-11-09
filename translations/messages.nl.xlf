@@ -1,77 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
   <file id="messages.nl">
-    <unit id="XdjmwSf" name="site.navbar.title">
+    <unit id="1H0cY_J" name="user.choice.role_user">
       <notes>
-        <note category="file-source" priority="1">templates/home/index.html.twig:4</note>
-        <note category="file-source" priority="1">templates/base.html.twig:12</note>
+        <note category="file-source" priority="1">sah-php/src/Form/Type/UserType.php:22</note>
+        <note priority="1">src/Form/Type/UserType.php:42</note>
       </notes>
       <segment>
-        <source>site.navbar.title</source>
-        <target>sah</target>
+        <source>user.choice.role_user</source>
+        <target>Gebruikers rol</target>
       </segment>
     </unit>
-    <unit id="7uFjkBg" name="home.offline.heading">
+    <unit id="sP1CS8D" name="user.choice.role_admin">
       <notes>
-        <note category="file-source" priority="1">templates/home/offline.html.twig:6</note>
-        <note category="desc" priority="1">Offline</note>
-        <note priority="1">templates/home/offline.html.twig:6</note>
-        <note priority="1">Offline</note>
+        <note category="file-source" priority="1">sah-php/src/Form/Type/UserType.php:22</note>
+        <note priority="1">src/Form/Type/UserType.php:42</note>
       </notes>
       <segment>
-        <source>home.offline.heading</source>
-        <target>Offline</target>
+        <source>user.choice.role_admin</source>
+        <target>Admin rol</target>
       </segment>
     </unit>
-    <unit id="lkt5ok4" name="home.offline.paragraph0">
+    <unit id="JNryrvg" name="user.label.email">
       <notes>
-        <note category="file-source" priority="1">templates/home/offline.html.twig:7</note>
-        <note category="desc" priority="1">Oh! Looks like you are offline</note>
-        <note priority="1">templates/home/offline.html.twig:7</note>
-        <note priority="1">Oh! Looks like you are offline</note>
+        <note category="file-source" priority="1">sah-php/src/Form/Type/UserType.php:17</note>
+        <note priority="1">src/Form/Type/UserType.php:37</note>
       </notes>
       <segment>
-        <source>home.offline.paragraph0</source>
-        <target>Oh! Het lijkt erop dat je offline bent</target>
+        <source>user.label.email</source>
+        <target>Email</target>
       </segment>
     </unit>
-    <unit id="Yj8YT3o" name="home.offline.paragraph1">
+    <unit id="mnGh1V8" name="user.label.roles">
       <notes>
-        <note category="file-source" priority="1">templates/home/offline.html.twig:12</note>
-        <note category="desc" priority="1">When you are in offline mode you get redirected here.</note>
-        <note priority="1">templates/home/offline.html.twig:12</note>
-        <note priority="1">When you are in offline mode you get redirected here.</note>
+        <note category="file-source" priority="1">sah-php/src/Form/Type/UserType.php:21</note>
+        <note priority="1">src/Form/Type/UserType.php:41</note>
       </notes>
       <segment>
-        <source>home.offline.paragraph1</source>
-        <target>Als je offline bent word je hiernaartoe gestuurd.</target>
+        <source>user.label.roles</source>
+        <target>Rollen</target>
       </segment>
     </unit>
-    <unit id="D6N0k3f" name="home.offline.paragraph2">
+    <unit id="3NHVIj9" name="Name">
       <notes>
-        <note category="file-source" priority="1">templates/home/offline.html.twig:15</note>
-        <note category="desc" priority="1">When you are back online you can check out the entire site again. Sorry for now!</note>
-        <note priority="1">templates/home/offline.html.twig:15</note>
-        <note priority="1">When you are back online you can check out the entire site again. Sorry for now!</note>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeCategoryType.php:16</note>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeVideoType.php:20</note>
+        <note category="state" priority="1">new</note>
       </notes>
       <segment>
-        <source>home.offline.paragraph2</source>
-        <target>Als je weer online bent kan je weer verder.</target>
+        <source>Name</source>
+        <target></target>
       </segment>
     </unit>
-    <unit id="28GnThW" name="site.button.share">
+    <unit id="Pkd0hUb" name="Seqnr">
       <notes>
-        <note category="file-source" priority="1">templates/home/video.html.twig:27</note>
-        <note category="desc" priority="1">Deel</note>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeCategoryType.php:17</note>
+        <note category="state" priority="1">new</note>
       </notes>
       <segment>
-        <source>site.button.share</source>
-        <target>Deel</target>
+        <source>Seqnr</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="SugVcvB" name="Q">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeVideoQueryType.php:17</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Q</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="KSwG8AR" name="Category">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeVideoQueryType.php:24</note>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeVideoType.php:26</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Category</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="WYxjZYO" name="Zoek ...">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeVideoQueryType.php:20</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Zoek ...</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="8sA2Lbu" name="- categorie -">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeVideoQueryType.php:27</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>- categorie -</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="T8UqPEx" name="Duration">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeVideoType.php:21</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Duration</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="1TS_gp4" name="Video">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeVideoType.php:22</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Video</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="WRk1sVs" name="Public">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Form/YoutubeVideoType.php:23</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Public</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="iJAhVXd" name="admin.menu.dashboard">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Menu/Admin/DashboardMenuListener.php:28</note>
+        <note priority="1">src/Menu/Admin/DashboardMenuListener.php:32</note>
+      </notes>
+      <segment>
+        <source>admin.menu.dashboard</source>
+        <target>Dashboard</target>
+      </segment>
+    </unit>
+    <unit id="j3Dt6Fk" name="admin.menu.translations">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Menu/Admin/TranslatorMenuListener.php:36</note>
+        <note priority="1">src/Menu/Admin/TranslatorMenuListener.php:44</note>
+      </notes>
+      <segment>
+        <source>admin.menu.translations</source>
+        <target>Vertalingen (dev)</target>
+      </segment>
+    </unit>
+    <unit id="MlBIe97" name="admin.menu.users">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Menu/Admin/UserMenuListener.php:26</note>
+        <note priority="1">src/Menu/Admin/UserMenuListener.php:33</note>
+      </notes>
+      <segment>
+        <source>admin.menu.users</source>
+        <target>Gebruikers</target>
+      </segment>
+    </unit>
+    <unit id="zrMmUpR" name="admin.menu.youtube_video">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Menu/Admin/YoutubeMenuListener.php:26</note>
+      </notes>
+      <segment>
+        <source>admin.menu.youtube_video</source>
+        <target>Videos</target>
+      </segment>
+    </unit>
+    <unit id="znRgOPU" name="admin.menu.youtube_category">
+      <notes>
+        <note category="file-source" priority="1">sah-php/src/Menu/Admin/YoutubeMenuListener.php:30</note>
+      </notes>
+      <segment>
+        <source>admin.menu.youtube_category</source>
+        <target>Categorie</target>
+      </segment>
+    </unit>
+    <unit id="7wKytOC" name="admin.nav.logout">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin.html.twig:11</note>
+      </notes>
+      <segment>
+        <source>admin.nav.logout</source>
+        <target>Uitloggen</target>
+      </segment>
+    </unit>
+    <unit id="prSBapY" name="admin.nav.profile_image">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin.html.twig:20</note>
+      </notes>
+      <segment>
+        <source>admin.nav.profile_image</source>
+        <target>Profiel afbeelding</target>
       </segment>
     </unit>
     <unit id="wglJKFL" name="admin.dashboard.page_title">
       <notes>
-        <note category="file-source" priority="1">templates/admin/dashboard/index.html.twig:4</note>
+        <note category="file-source" priority="1">sah-php/templates/admin/dashboard/index.html.twig:4</note>
         <note category="desc" priority="1">Hello glynn admin</note>
         <note priority="1">templates/admin/dashboard/index.html.twig:4</note>
         <note priority="1">Hello glynn admin</note>
@@ -81,108 +211,9 @@
         <target>Hallo glynn admin</target>
       </segment>
     </unit>
-    <unit id="PLnHN8J" name="youtubeVideo.table.name">
-      <notes>
-        <note category="file-source" priority="1">templates/admin/youtube_video/index.html.twig:29</note>
-      </notes>
-      <segment>
-        <source>youtubeVideo.table.name</source>
-        <target>Naam</target>
-      </segment>
-    </unit>
-    <unit id="AeXi3nM" name="youtubeVideo.table.duration">
-      <notes>
-        <note category="file-source" priority="1">templates/admin/youtube_video/index.html.twig:31</note>
-      </notes>
-      <segment>
-        <source>youtubeVideo.table.duration</source>
-        <target>Duur</target>
-      </segment>
-    </unit>
-    <unit id="60SYSjx" name="youtubeVideo.table.created">
-      <notes>
-        <note category="file-source" priority="1">templates/admin/youtube_video/index.html.twig:32</note>
-      </notes>
-      <segment>
-        <source>youtubeVideo.table.created</source>
-        <target>Aangemaakt</target>
-      </segment>
-    </unit>
-    <unit id="MkCYi6Q" name="users.index.title">
-      <notes>
-        <note category="file-source" priority="1">templates/admin/user/index.html.twig:4</note>
-        <note category="desc" priority="1">Users</note>
-        <note priority="1">templates/admin/user/index.html.twig:4</note>
-        <note priority="1">Users</note>
-      </notes>
-      <segment>
-        <source>users.index.title</source>
-        <target>Gebruikers</target>
-      </segment>
-    </unit>
-    <unit id="KkGjn7A" name="users.index.page_title">
-      <notes>
-        <note category="file-source" priority="1">templates/admin/user/index.html.twig:8</note>
-        <note category="desc" priority="1">Users</note>
-        <note priority="1">templates/admin/user/index.html.twig:8</note>
-        <note priority="1">Users</note>
-      </notes>
-      <segment>
-        <source>users.index.page_title</source>
-        <target>Gebruikers</target>
-      </segment>
-    </unit>
-    <unit id="i1HbhNh" name="users.table.email">
-      <notes>
-        <note category="file-source" priority="1">templates/admin/user/index.html.twig:17</note>
-        <note category="desc" priority="1">Email</note>
-        <note priority="1">templates/admin/user/index.html.twig:18</note>
-        <note priority="1">Email</note>
-      </notes>
-      <segment>
-        <source>users.table.email</source>
-        <target>Email</target>
-      </segment>
-    </unit>
-    <unit id="T4PiYoe" name="user.show_user.title">
-      <notes>
-        <note category="file-source" priority="1">templates/admin/user/show.html.twig:4</note>
-        <note category="desc" priority="1">User %username%</note>
-        <note priority="1">templates/admin/user/show.html.twig:4</note>
-        <note priority="1">User %username%</note>
-      </notes>
-      <segment>
-        <source>user.show_user.title</source>
-        <target>Gebruiker</target>
-      </segment>
-    </unit>
-    <unit id="Be96Jnt" name="user.show_user.page_title">
-      <notes>
-        <note category="file-source" priority="1">templates/admin/user/show.html.twig:8</note>
-        <note category="desc" priority="1">User %username%</note>
-        <note priority="1">templates/admin/user/show.html.twig:8</note>
-        <note priority="1">User %username%</note>
-      </notes>
-      <segment>
-        <source>user.show_user.page_title</source>
-        <target>Gebruikers</target>
-      </segment>
-    </unit>
-    <unit id=".NPTzjH" name="user.button.edit_user">
-      <notes>
-        <note category="file-source" priority="1">templates/admin/user/show.html.twig:28</note>
-        <note category="desc" priority="1">Edit user</note>
-        <note priority="1">templates/admin/user/show.html.twig:28</note>
-        <note priority="1">Edit user</note>
-      </notes>
-      <segment>
-        <source>user.button.edit_user</source>
-        <target>Bewerk gebruker</target>
-      </segment>
-    </unit>
     <unit id="U3tnVir" name="user.form.title">
       <notes>
-        <note category="file-source" priority="1">templates/admin/user/form.html.twig:4</note>
+        <note category="file-source" priority="1">sah-php/templates/admin/user/form.html.twig:4</note>
         <note category="desc" priority="1">User</note>
         <note priority="1">templates/admin/user/form.html.twig:4</note>
         <note priority="1">User</note>
@@ -194,7 +225,7 @@
     </unit>
     <unit id="GlecRiG" name="user.form.page_title">
       <notes>
-        <note category="file-source" priority="1">templates/admin/user/form.html.twig:8</note>
+        <note category="file-source" priority="1">sah-php/templates/admin/user/form.html.twig:8</note>
         <note category="desc" priority="1">User</note>
         <note priority="1">templates/admin/user/form.html.twig:8</note>
         <note priority="1">User</note>
@@ -206,7 +237,7 @@
     </unit>
     <unit id="Tn9CwN9" name="user.button.save">
       <notes>
-        <note category="file-source" priority="1">templates/admin/user/form.html.twig:17</note>
+        <note category="file-source" priority="1">sah-php/templates/admin/user/form.html.twig:17</note>
         <note category="desc" priority="1">Save</note>
         <note priority="1">templates/admin/user/form.html.twig:17</note>
         <note priority="1">Save</note>
@@ -216,36 +247,140 @@
         <target>Opslaan</target>
       </segment>
     </unit>
-    <unit id="7wKytOC" name="admin.nav.logout">
+    <unit id="MkCYi6Q" name="users.index.title">
       <notes>
-        <note category="file-source" priority="1">templates/admin.html.twig:11</note>
+        <note category="file-source" priority="1">sah-php/templates/admin/user/index.html.twig:4</note>
+        <note category="desc" priority="1">Users</note>
+        <note priority="1">templates/admin/user/index.html.twig:4</note>
+        <note priority="1">Users</note>
       </notes>
       <segment>
-        <source>admin.nav.logout</source>
-        <target>Uitloggen</target>
+        <source>users.index.title</source>
+        <target>Gebruikers</target>
       </segment>
     </unit>
-    <unit id="prSBapY" name="admin.nav.profile_image">
+    <unit id="KkGjn7A" name="users.index.page_title">
       <notes>
-        <note category="file-source" priority="1">templates/admin.html.twig:20</note>
+        <note category="file-source" priority="1">sah-php/templates/admin/user/index.html.twig:8</note>
+        <note category="desc" priority="1">Users</note>
+        <note priority="1">templates/admin/user/index.html.twig:8</note>
+        <note priority="1">Users</note>
       </notes>
       <segment>
-        <source>admin.nav.profile_image</source>
-        <target>Profiel afbeelding</target>
+        <source>users.index.page_title</source>
+        <target>Gebruikers</target>
+      </segment>
+    </unit>
+    <unit id="i1HbhNh" name="users.table.email">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin/user/index.html.twig:17</note>
+        <note category="desc" priority="1">Email</note>
+        <note priority="1">templates/admin/user/index.html.twig:18</note>
+        <note priority="1">Email</note>
+      </notes>
+      <segment>
+        <source>users.table.email</source>
+        <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="T4PiYoe" name="user.show_user.title">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin/user/show.html.twig:4</note>
+        <note category="desc" priority="1">User %username%</note>
+        <note priority="1">templates/admin/user/show.html.twig:4</note>
+        <note priority="1">User %username%</note>
+      </notes>
+      <segment>
+        <source>user.show_user.title</source>
+        <target>Gebruiker</target>
+      </segment>
+    </unit>
+    <unit id="Be96Jnt" name="user.show_user.page_title">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin/user/show.html.twig:8</note>
+        <note category="desc" priority="1">User %username%</note>
+        <note priority="1">templates/admin/user/show.html.twig:8</note>
+        <note priority="1">User %username%</note>
+      </notes>
+      <segment>
+        <source>user.show_user.page_title</source>
+        <target>Gebruikers</target>
+      </segment>
+    </unit>
+    <unit id=".NPTzjH" name="user.button.edit_user">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin/user/show.html.twig:28</note>
+        <note category="desc" priority="1">Edit user</note>
+        <note priority="1">templates/admin/user/show.html.twig:28</note>
+        <note priority="1">Edit user</note>
+      </notes>
+      <segment>
+        <source>user.button.edit_user</source>
+        <target>Bewerk gebruker</target>
+      </segment>
+    </unit>
+    <unit id="PLnHN8J" name="youtubeVideo.table.name">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin/youtube_stats/index.html.twig:25</note>
+        <note category="file-source" priority="1">sah-php/templates/admin/youtube_video/index.html.twig:49</note>
+      </notes>
+      <segment>
+        <source>youtubeVideo.table.name</source>
+        <target>Naam</target>
+      </segment>
+    </unit>
+    <unit id="aARuYjw" name="youtubeVideo.table.type">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin/youtube_stats/index.html.twig:26</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>youtubeVideo.table.type</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="60SYSjx" name="youtubeVideo.table.created">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin/youtube_stats/index.html.twig:27</note>
+        <note category="file-source" priority="1">sah-php/templates/admin/youtube_video/index.html.twig:52</note>
+      </notes>
+      <segment>
+        <source>youtubeVideo.table.created</source>
+        <target>Aangemaakt</target>
+      </segment>
+    </unit>
+    <unit id="AeXi3nM" name="youtubeVideo.table.duration">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/admin/youtube_video/index.html.twig:51</note>
+      </notes>
+      <segment>
+        <source>youtubeVideo.table.duration</source>
+        <target>Duur</target>
       </segment>
     </unit>
     <unit id="3WzSCTi" name="site.meta.title">
       <notes>
-        <note category="file-source" priority="1">templates/base.html.twig:4</note>
+        <note category="file-source" priority="1">sah-php/templates/base.html.twig:4</note>
       </notes>
       <segment>
         <source>site.meta.title</source>
         <target></target>
       </segment>
     </unit>
+    <unit id="XdjmwSf" name="site.navbar.title">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/base.html.twig:12</note>
+        <note category="file-source" priority="1">sah-php/templates/home/index.html.twig:4</note>
+        <note category="file-source" priority="1">sah-php/templates/home/search.html.twig:4</note>
+      </notes>
+      <segment>
+        <source>site.navbar.title</source>
+        <target>sah</target>
+      </segment>
+    </unit>
     <unit id="qQ0clFV" name="site.navbar.logout">
       <notes>
-        <note category="file-source" priority="1">templates/base.html.twig:19</note>
+        <note category="file-source" priority="1">sah-php/templates/base.html.twig:19</note>
       </notes>
       <segment>
         <source>site.navbar.logout</source>
@@ -254,25 +389,16 @@
     </unit>
     <unit id="HvyHuCV" name="site.navbar.login">
       <notes>
-        <note category="file-source" priority="1">templates/base.html.twig:28</note>
+        <note category="file-source" priority="1">sah-php/templates/base.html.twig:28</note>
       </notes>
       <segment>
         <source>site.navbar.login</source>
         <target>Inloggen</target>
       </segment>
     </unit>
-    <unit id="zxJr5WA" name="site.header.login">
-      <notes>
-        <note category="file-source" priority="1">templates/security/login.html.twig:3</note>
-      </notes>
-      <segment>
-        <source>site.header.login</source>
-        <target>Inloggen</target>
-      </segment>
-    </unit>
     <unit id="okluDoz" name="users.translation.page_title">
       <notes>
-        <note category="file-source" priority="1">templates/bundles/TranslationBundle/WebUI/base.html.twig:9</note>
+        <note category="file-source" priority="1">sah-php/templates/bundles/TranslationBundle/WebUI/base.html.twig:9</note>
         <note category="desc" priority="1">Translations</note>
         <note priority="1">templates/bundles/TranslationBundle/WebUI/base.html.twig:4</note>
         <note priority="1">Translations</note>
@@ -282,143 +408,111 @@
         <target>Vertalingen</target>
       </segment>
     </unit>
-    <unit id="gqNTf.D" name="name">
+    <unit id="7uFjkBg" name="home.offline.heading">
       <notes>
-        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:19</note>
-        <note category="file-source" priority="1">src/Form/YoutubeCategoryType.php:16</note>
+        <note category="file-source" priority="1">sah-php/templates/home/offline.html.twig:6</note>
+        <note category="desc" priority="1">Offline</note>
+        <note priority="1">templates/home/offline.html.twig:6</note>
+        <note priority="1">Offline</note>
       </notes>
       <segment>
-        <source>name</source>
-        <target>Naam</target>
+        <source>home.offline.heading</source>
+        <target>Offline</target>
       </segment>
     </unit>
-    <unit id="yqea9Nt" name="duration">
+    <unit id="lkt5ok4" name="home.offline.paragraph0">
       <notes>
-        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:20</note>
+        <note category="file-source" priority="1">sah-php/templates/home/offline.html.twig:7</note>
+        <note category="desc" priority="1">Oh! Looks like you are offline</note>
+        <note priority="1">templates/home/offline.html.twig:7</note>
+        <note priority="1">Oh! Looks like you are offline</note>
       </notes>
       <segment>
-        <source>duration</source>
-        <target>Duur</target>
+        <source>home.offline.paragraph0</source>
+        <target>Oh! Het lijkt erop dat je offline bent</target>
       </segment>
     </unit>
-    <unit id="DKsclhd" name="video">
+    <unit id="Yj8YT3o" name="home.offline.paragraph1">
       <notes>
-        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:21</note>
+        <note category="file-source" priority="1">sah-php/templates/home/offline.html.twig:12</note>
+        <note category="desc" priority="1">When you are in offline mode you get redirected here.</note>
+        <note priority="1">templates/home/offline.html.twig:12</note>
+        <note priority="1">When you are in offline mode you get redirected here.</note>
       </notes>
       <segment>
-        <source>video</source>
-        <target>Video</target>
+        <source>home.offline.paragraph1</source>
+        <target>Als je offline bent word je hiernaartoe gestuurd.</target>
       </segment>
     </unit>
-    <unit id="7bLNO3T" name="category">
+    <unit id="D6N0k3f" name="home.offline.paragraph2">
       <notes>
-        <note category="file-source" priority="1">src/Form/YoutubeVideoType.php:22</note>
+        <note category="file-source" priority="1">sah-php/templates/home/offline.html.twig:15</note>
+        <note category="desc" priority="1">When you are back online you can check out the entire site again. Sorry for now!</note>
+        <note priority="1">templates/home/offline.html.twig:15</note>
+        <note priority="1">When you are back online you can check out the entire site again. Sorry for now!</note>
       </notes>
       <segment>
-        <source>category</source>
-        <target>Categorie</target>
+        <source>home.offline.paragraph2</source>
+        <target>Als je weer online bent kan je weer verder.</target>
       </segment>
     </unit>
-    <unit id="pOBd36x" name="seqnr">
+    <unit id="5Gd5SiQ" name="site.title.search">
       <notes>
-        <note category="file-source" priority="1">src/Form/YoutubeCategoryType.php:17</note>
+        <note category="file-source" priority="1">sah-php/templates/home/search.html.twig:12</note>
+        <note category="desc" priority="1">Zoeken</note>
+        <note category="state" priority="1">new</note>
       </notes>
       <segment>
-        <source>seqnr</source>
-        <target>Volgnr</target>
+        <source>site.title.search</source>
+        <target>Zoeken</target>
       </segment>
     </unit>
-    <unit id="1H0cY_J" name="user.choice.role_user">
+    <unit id="Hvya4Qe" name="site.description.no-results-found">
       <notes>
-        <note category="file-source" priority="1">src/Form/Type/UserType.php:22</note>
-        <note priority="1">src/Form/Type/UserType.php:42</note>
+        <note category="file-source" priority="1">sah-php/templates/home/search.html.twig:53</note>
+        <note category="desc" priority="1">Helaas, geen resultaten gevonden. Hier wat willekeurigs.</note>
+        <note category="state" priority="1">new</note>
       </notes>
       <segment>
-        <source>user.choice.role_user</source>
-        <target>Gebruikers rol</target>
+        <source>site.description.no-results-found</source>
+        <target>Helaas, geen resultaten gevonden. Hier wat willekeurigs.</target>
       </segment>
     </unit>
-    <unit id="sP1CS8D" name="user.choice.role_admin">
+    <unit id="28GnThW" name="site.button.share">
       <notes>
-        <note category="file-source" priority="1">src/Form/Type/UserType.php:22</note>
-        <note priority="1">src/Form/Type/UserType.php:42</note>
+        <note category="file-source" priority="1">sah-php/templates/home/video.html.twig:27</note>
+        <note category="desc" priority="1">Deel</note>
       </notes>
       <segment>
-        <source>user.choice.role_admin</source>
-        <target>Admin rol</target>
+        <source>site.button.share</source>
+        <target>Deel</target>
       </segment>
     </unit>
-    <unit id="JNryrvg" name="user.label.email">
+    <unit id="zxJr5WA" name="site.header.login">
       <notes>
-        <note category="file-source" priority="1">src/Form/Type/UserType.php:17</note>
-        <note priority="1">src/Form/Type/UserType.php:37</note>
+        <note category="file-source" priority="1">sah-php/templates/security/login-sent.html.twig:3</note>
+        <note category="file-source" priority="1">sah-php/templates/security/login-sent.html.twig:13</note>
+        <note category="file-source" priority="1">sah-php/templates/security/login.html.twig:3</note>
+        <note category="file-source" priority="1">sah-php/templates/security/login.html.twig:13</note>
       </notes>
       <segment>
-        <source>user.label.email</source>
-        <target>Email</target>
+        <source>site.header.login</source>
+        <target>Inloggen</target>
       </segment>
     </unit>
-    <unit id="mnGh1V8" name="user.label.roles">
+    <unit id="WA4_C0L" name="site.login.sent">
       <notes>
-        <note category="file-source" priority="1">src/Form/Type/UserType.php:21</note>
-        <note priority="1">src/Form/Type/UserType.php:41</note>
+        <note category="file-source" priority="1">sah-php/templates/security/login-sent.html.twig:17</note>
+        <note category="state" priority="1">new</note>
       </notes>
       <segment>
-        <source>user.label.roles</source>
-        <target>Rollen</target>
-      </segment>
-    </unit>
-    <unit id="j3Dt6Fk" name="admin.menu.translations">
-      <notes>
-        <note category="file-source" priority="1">src/Menu/Admin/TranslatorMenuListener.php:36</note>
-        <note priority="1">src/Menu/Admin/TranslatorMenuListener.php:44</note>
-      </notes>
-      <segment>
-        <source>admin.menu.translations</source>
-        <target>Vertalingen (dev)</target>
-      </segment>
-    </unit>
-    <unit id="iJAhVXd" name="admin.menu.dashboard">
-      <notes>
-        <note category="file-source" priority="1">src/Menu/Admin/DashboardMenuListener.php:28</note>
-        <note priority="1">src/Menu/Admin/DashboardMenuListener.php:32</note>
-      </notes>
-      <segment>
-        <source>admin.menu.dashboard</source>
-        <target>Dashboard</target>
-      </segment>
-    </unit>
-    <unit id="zrMmUpR" name="admin.menu.youtube_video">
-      <notes>
-        <note category="file-source" priority="1">src/Menu/Admin/YoutubeMenuListener.php:26</note>
-      </notes>
-      <segment>
-        <source>admin.menu.youtube_video</source>
-        <target>Videos</target>
-      </segment>
-    </unit>
-    <unit id="znRgOPU" name="admin.menu.youtube_category">
-      <notes>
-        <note category="file-source" priority="1">src/Menu/Admin/YoutubeMenuListener.php:30</note>
-      </notes>
-      <segment>
-        <source>admin.menu.youtube_category</source>
-        <target>Categorie</target>
-      </segment>
-    </unit>
-    <unit id="MlBIe97" name="admin.menu.users">
-      <notes>
-        <note category="file-source" priority="1">src/Menu/Admin/UserMenuListener.php:26</note>
-        <note priority="1">src/Menu/Admin/UserMenuListener.php:33</note>
-      </notes>
-      <segment>
-        <source>admin.menu.users</source>
-        <target>Gebruikers</target>
+        <source>site.login.sent</source>
+        <target>Link verzonden, check je mailbox!</target>
       </segment>
     </unit>
     <unit id="NyvUbEU" name="site.message.loggedin">
       <notes>
-        <note category="state" priority="1">obsolete</note>
+        <note category="file-source" priority="1">sah-php/templates/security/login.html.twig:21</note>
       </notes>
       <segment>
         <source>site.message.loggedin</source>
@@ -427,7 +521,7 @@
     </unit>
     <unit id="Fe8s43Z" name="site.button.logout">
       <notes>
-        <note category="state" priority="1">obsolete</note>
+        <note category="file-source" priority="1">sah-php/templates/security/login.html.twig:22</note>
       </notes>
       <segment>
         <source>site.button.logout</source>
@@ -436,11 +530,65 @@
     </unit>
     <unit id="0k48KgV" name="site.label.email">
       <notes>
-        <note category="state" priority="1">obsolete</note>
+        <note category="file-source" priority="1">sah-php/templates/security/login.html.twig:26</note>
       </notes>
       <segment>
         <source>site.label.email</source>
         <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="_epJUSY" name="site.button.login">
+      <notes>
+        <note category="file-source" priority="1">sah-php/templates/security/login.html.twig:31</note>
+      </notes>
+      <segment>
+        <source>site.button.login</source>
+        <target>Inloggen</target>
+      </segment>
+    </unit>
+    <unit id="gqNTf.D" name="name">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>name</source>
+        <target>Naam</target>
+      </segment>
+    </unit>
+    <unit id="yqea9Nt" name="duration">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>duration</source>
+        <target>Duur</target>
+      </segment>
+    </unit>
+    <unit id="DKsclhd" name="video">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>video</source>
+        <target>Video</target>
+      </segment>
+    </unit>
+    <unit id="7bLNO3T" name="category">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>category</source>
+        <target>Categorie</target>
+      </segment>
+    </unit>
+    <unit id="pOBd36x" name="seqnr">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>seqnr</source>
+        <target>Volgnr</target>
       </segment>
     </unit>
     <unit id="xyP2wiV" name="site.label.password">
@@ -459,15 +607,6 @@
       <segment>
         <source>site.label.remember_me</source>
         <target>Onthoud me</target>
-      </segment>
-    </unit>
-    <unit id="_epJUSY" name="site.button.login">
-      <notes>
-        <note category="state" priority="1">obsolete</note>
-      </notes>
-      <segment>
-        <source>site.button.login</source>
-        <target>Inloggen</target>
       </segment>
     </unit>
     <unit id="tITgZsF" name="site.menu.home">

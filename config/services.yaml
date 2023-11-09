@@ -5,7 +5,6 @@ parameters:
 
 services:
     Liip\ImagineBundle\Service\FilterService: '@liip_imagine.service.filter'
-    PhpMob\Settings\Manager\SettingManager: '@phpmob.settings.manager'
 
     # default configuration for services in *this* file
     _defaults:
