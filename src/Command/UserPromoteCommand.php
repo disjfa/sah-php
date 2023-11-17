@@ -55,7 +55,7 @@ class UserPromoteCommand extends Command
 
         $helper = $this->getHelper('question');
 
-        if ( ! $email) {
+        if (!$email) {
             $question = new Question('Please enter an email address ');
             $email = $helper->ask($input, $output, $question);
         }
@@ -67,7 +67,7 @@ class UserPromoteCommand extends Command
             return 0;
         }
 
-        if ( ! $role) {
+        if (!$role) {
             $question = new Question('Please enter a role ');
             $role = $helper->ask($input, $output, $question);
         }

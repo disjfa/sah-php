@@ -61,7 +61,7 @@ class UserCreateCommand extends Command
 
         $helper = $this->getHelper('question');
 
-        if ( ! $email) {
+        if (!$email) {
             $question = new Question('Please enter an email address ');
             $email = $helper->ask($input, $output, $question);
         }
@@ -75,7 +75,7 @@ class UserCreateCommand extends Command
             return 0;
         }
 
-        if ( ! $password) {
+        if (!$password) {
             $question = new Question('Please enter a password ');
             $password = $helper->ask($input, $output, $question);
         }

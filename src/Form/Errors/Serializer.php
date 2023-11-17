@@ -18,7 +18,7 @@ class Serializer
             }
 
             if (($child instanceof Form) && (count($child->getIterator()) > 0)) {
-                if ( ! empty(self::serialize($child))) {
+                if (!empty(self::serialize($child))) {
                     $errors[$key] = self::serialize($child);
                 }
             }

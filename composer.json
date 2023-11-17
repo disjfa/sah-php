@@ -55,6 +55,7 @@
         "twig/cssinliner-extra": "^3.7",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/inky-extra": "^3.7",
+        "twig/markdown-extra": "^3.7",
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
@@ -104,7 +105,7 @@
             "@auto-scripts"
         ],
         "pre-commit": [
-            "php-cs-fixer fix",
+            "php-cs-fixer fix src",
             "bin/console lint:twig"
         ]
     },
